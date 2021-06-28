@@ -1,0 +1,98 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+body {
+   font-size: 13px;
+   font-family: 'Barlow Semi Condensed', sans-serif;
+}
+:root {
+   /* Primary */
+   --moderate-violet: hsl(263, 55%, 52%);
+   --very-dark-grayish-blue: hsl(217, 19%, 35%);
+   --very-dark-blackish-blue: hsl(219, 29%, 14%);
+   --white: hsl(0, 0%, 100%);
+   /* Neutral */
+   --light-gray: hsl(0, 0%, 81%);
+   --light-grayish-blue: hsl(210, 46%, 95%);
+}
+.container {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+   gap: 30px;
+   margin: 50px auto;
+   grid-template-areas: "start start myself recommended" "love p p recommended";
+}
+@media (min-width: 1200px) {
+   .container {
+      width: 1000px;
+   }
+}
+.container > div .info {
+   display: flex;
+   margin-bottom: 20px;
+}
+.container > div {
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 0 10px 0 rgb(128, 127, 127);
+}
+.container > div .info img {
+   width: 30px;
+   border-radius: 50%;
+   margin-right: 10px;
+}
+.container > div .info div {
+   font-weight: bold;
+   color: white;
+}
+.container > div:nth-child(3) .info div,
+.container > div:nth-child(5) .info div {
+   color: black;
+}
+.container > div .info p {
+   opacity: 50%;
+   color: white;
+}
+.container > div.recommended .info p,
+.container > div.love .info p {
+   color: black;
+}
+.container > div h3 {
+   color: white;
+   margin-bottom: 20px;
+}
+.container > div.recommended h3,
+.container > div.love h3 {
+   color: var(--very-dark-grayish-blue);
+}
+.container > div > p {
+   color: white;
+   opacity: 70%;
+}
+.container > div.recommended > p,
+.container > div.love > p {
+   color: var(--very-dark-grayish-blue);
+}
+.container > div.start {
+   background-color: var(--moderate-violet);
+   grid-area: start;
+}
+.container > div.myself {
+   background-color: var(--very-dark-grayish-blue);
+   grid-area: myself;
+}
+.container > div.recommended {
+   background-color: var(--white);
+   grid-area: recommended;
+}
+.container > div.love {
+   background-color: white;
+   grid-area: love;
+}
+.container > div.p {
+   background-color: var(--very-dark-blackish-blue);
+   grid-area: p;
+}
